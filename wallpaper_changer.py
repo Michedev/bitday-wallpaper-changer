@@ -38,18 +38,18 @@ def change_wallpaper_command(path_img: str) -> str:
     return command
 
 
-def is_pair(num) -> bool:
+def is_even(num):
     return num % 2 == 0
 
 
 def get_img_path_by_hour(hour: int) -> str:
-    hour = hour if is_pair(hour) else hour - 1
+    hour = hour if is_even(hour) else hour - 1
     index_img = pair_hour_to_index[hour]
     return img_paths[index_img]
 
 
 def seconds_to_next_img(time: {'hour', 'minute', 'second'}) -> int:
-    remaining_hours = 1 if is_pair(time.hour) else 0
+    remaining_hours = 1 if is_even(time.hour) else 0
     remaining_minutes = 60 - time.minute
     remaining_seconds = remaining_minutes * 60 + remaining_hours * 3600 - time.second
     return remaining_seconds
@@ -63,7 +63,7 @@ def change_wallpaper():
     if code == 512: #widged locked
         sys.exit(1)
 
-ten_minutes = 600
+ten_minutes = 600 #seconds
 
 opt_cfg_file = join_paths(os.environ['HOME'], '.config', 'wallpaper_changer_res.cfg')
 
