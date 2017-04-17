@@ -1,7 +1,7 @@
 # bitday-wallpaper-changer-kde
 Python script file that changes automatically the wallpaper of your KDE desktop
 Follow the instruction to make work the script:
-- Go to http://www.bitday.me/download/ and download the png of your desktop resolution.
+- Go to http://www.bitday.me/download/ and download the zip of your desktop resolution.
 - Extract all the archive under Pictures folder
 - Run
 
