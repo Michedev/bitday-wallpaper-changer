@@ -10,13 +10,15 @@ from os.path import join as join_paths
 
 import subprocess
 
-def get_resolution():
+
+def get_resolution(cfg_file=None):
     if len(sys.argv) == 1:
-        if os.path.exists(opt_cfg_file):
-            with open(opt_cfg_file) as f:
+        if cfg_file and os.path.exists(cfg_file):
+            with open(cfg_file) as f:
                 return f.read()
         else:
-            return subprocess.run("xrandr  | grep \* | cut -d' ' -f4", stdout=subprocess.PIPE, shell=True).stdout.decode('utf-8').replace('\n', '')
+            return subprocess.run("xrandr  | grep \* | cut -d' ' -f4", stdout=subprocess.PIPE,
+                                  shell=True).stdout.decode('utf-8').replace('\n', '')
     elif len(sys.argv) == 2:
         return sys.argv[2]
     else:
@@ -44,7 +46,7 @@ def is_even(num):
 
 def get_img_path_by_hour(hour: int) -> str:
     hour = hour if is_even(hour) else hour - 1
-    index_img = pair_hour_to_index[hour]
+    index_img = hour_to_index[hour]
     return img_paths[index_img]
 
 
@@ -60,22 +62,29 @@ def change_wallpaper():
     img_path = get_img_path_by_hour(time_now.hour)
     cmd = change_wallpaper_command(img_path)
     code = os.system(cmd)
-    if code == 512: #widged locked
+    if code == 512:  # widged locked
         sys.exit(1)
 
-ten_minutes = 600 #seconds
+
+ten_minutes = 600  # seconds
 
 opt_cfg_file = join_paths(os.environ['HOME'], '.config', 'wallpaper_changer_res.cfg')
 
-resolution = get_resolution()
+resolution = get_resolution(opt_cfg_file)
 path_images = os.environ['HOME'] + '/Pictures/BitDay-2-%s/%s/' % (resolution, resolution)
 img_paths = [join_paths(path_images, img) for img in os.listdir(path_images)]
 
-pair_hour_to_index = dict([(hour, index) for index, hour in enumerate(range(6, 22 + 1, 2))])
-pair_hour_to_index.update({0: 9, 2: 10, 4: 11})
+hour_to_index = dict([(hour, index) for index, hour in enumerate(range(6, 22 + 1, 2))])
+hour_to_index.update({0: 9, 2: 10, 4: 11})
 
-change_wallpaper()
-while True:
-    wait_time = min(ten_minutes, seconds_to_next_img(datetime.datetime.now()))
-    time.sleep(wait_time)
+
+def main():
     change_wallpaper()
+    while True:
+        wait_time = min(ten_minutes, seconds_to_next_img(datetime.datetime.now()))
+        time.sleep(wait_time)
+        change_wallpaper()
+
+
+if __name__ == '__main__':
+    main()
