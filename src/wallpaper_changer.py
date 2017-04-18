@@ -60,7 +60,6 @@ def change_wallpaper():
         sys.exit(1)
 
 
-
 opt_cfg_file = join_paths(os.environ['HOME'], '.config', 'wallpaper_changer_res.cfg')
 
 resolution = get_resolution(opt_cfg_file)
@@ -69,4 +68,3 @@ img_paths = [join_paths(path_images, img) for img in os.listdir(path_images)]
 
 hour_to_index = dict([(hour, index) for index, hour in enumerate(range(6, 22 + 1, 2))])
 hour_to_index.update({0: 9, 2: 10, 4: 11})
-

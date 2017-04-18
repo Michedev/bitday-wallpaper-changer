@@ -2,13 +2,12 @@ import os
 
 from setuptools import setup, Command
 
-build_exe_options = {"packages": ["os"], "excludes": ["tkinter"]}
 
 mainfile = os.path.join(os.path.dirname(__file__), 'src', 'main.py')
 name = 'bitday_wallpaper_changer_kde'
 
 class PyInstaller(Command):
-    description = "Generate a pyinstaller executable file"
+    description = "Generate a pyinstaller executable file from main.py"
 
     user_options = []
 
@@ -33,9 +32,9 @@ setup(
     url='https://github.com/Michedev/bitday-wallpaper-changer-kde',
     author='Michele De Vita',
     author_email='mik3dev@gmail.com',
-    options={"build_exe": build_exe_options},
     description='Python script file that changes automatically the wallpaper of your KDE desktop',
     long_description=read('README.md'),
+    license="GPLv3",
     python_requires='>=3.5',
     entry_points={
         'console_scripts': ['bitday_wallpaper_changer=src.main:main']
