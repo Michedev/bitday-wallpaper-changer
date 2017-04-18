@@ -1,5 +1,6 @@
 import unittest
-import wallpaper_changer
+
+from src import wallpaper_changer
 
 
 class Mytime:

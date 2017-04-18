@@ -1,14 +1,8 @@
-import os
-
 import datetime
-
-import time
-
-import sys
-
-from os.path import join as join_paths
-
+import os
 import subprocess
+import sys
+from os.path import join as join_paths
 
 
 def get_resolution(cfg_file=None):
@@ -66,7 +60,6 @@ def change_wallpaper():
         sys.exit(1)
 
 
-ten_minutes = 600  # seconds
 
 opt_cfg_file = join_paths(os.environ['HOME'], '.config', 'wallpaper_changer_res.cfg')
 
@@ -77,14 +70,3 @@ img_paths = [join_paths(path_images, img) for img in os.listdir(path_images)]
 hour_to_index = dict([(hour, index) for index, hour in enumerate(range(6, 22 + 1, 2))])
 hour_to_index.update({0: 9, 2: 10, 4: 11})
 
-
-def main():
-    change_wallpaper()
-    while True:
-        wait_time = min(ten_minutes, seconds_to_next_img(datetime.datetime.now()))
-        time.sleep(wait_time)
-        change_wallpaper()
-
-
-if __name__ == '__main__':
-    main()
