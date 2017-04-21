@@ -2,7 +2,7 @@
 Python script file that changes automatically the wallpaper of your Linux desktop. It requires Python 3.5 due to subprocess.run method mainly.
 Follow the instruction to make work the script:
 - Go to http://www.bitday.me/download/ and download the zip of your desktop resolution.
-- Extract all the archive under Pictures folder
+- Extract all the archive under Pictures folder (include the archive name as root folder)
 - Run
 
 The script get the path of images by your desktop resolution.
