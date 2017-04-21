@@ -13,3 +13,6 @@ Anyway you have some alternatives to set a custom resolution:
 
 Download
 - <a href="https://github.com/Michedev/bitday-wallpaper-changer/raw/master/dist/deb/bitday-wallpaper-changer.deb"> Deb </a>
+  
+  how to use:
+  - simply run from terminal "bitday-wallpaper-changer"
