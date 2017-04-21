@@ -9,5 +9,6 @@ The script check the path of images by your desktop resolution.
 Anyway you have some alternatives to set a custom resolution:
 - You can write into "~/.config/wallpaper_changer_res.cfg" your custom resolution
 - You can pass in input to the script your custom resolution
+
 Download
 - <a href="https://github.com/Michedev/bitday-wallpaper-changer/raw/master/dist/deb/bitday-wallpaper-changer.deb"> Deb </a>
