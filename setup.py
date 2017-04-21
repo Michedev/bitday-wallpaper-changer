@@ -29,7 +29,7 @@ setup(
     name=name,
     version='1.0.0',
     py_modules=['src.wallpaper_changer', 'src.main'],
-    url='https://github.com/Michedev/bitday-wallpaper-changer-kde',
+    url='https://github.com/Michedev/bitday-wallpaper-changer',
     author='Michele De Vita',
     author_email='mik3dev@gmail.com',
     description='Python script file that changes automatically the wallpaper of your KDE desktop',
@@ -46,6 +46,5 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
-        'Topic :: Desktop Environment :: K Desktop Environment (KDE)'
     ]
 )

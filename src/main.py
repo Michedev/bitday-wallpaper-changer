@@ -1,4 +1,4 @@
-from src.wallpaper_changer import change_wallpaper, seconds_to_next_img
+from wallpaper_changer import change_wallpaper, seconds_to_next_img
 import time
 import datetime
 ten_minutes = 600  # seconds
