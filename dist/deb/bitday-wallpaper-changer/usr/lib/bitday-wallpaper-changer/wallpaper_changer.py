@@ -6,7 +6,6 @@ from os.path import join as join_paths
 
 github_repo = "https://github.com/Michedev/bitday-wallpaper-changer"
 
-
 def get_resolution(cfg_file=None):
     if len(sys.argv) == 1:
         if cfg_file and os.path.exists(cfg_file):

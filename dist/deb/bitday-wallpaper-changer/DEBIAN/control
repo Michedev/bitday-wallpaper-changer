@@ -1,0 +1,13 @@
+Source: bitday-wallpaper-changer
+Section: python, utils
+Priority: extra
+Version: 1.0.0
+Maintainer: "Michele De Vita" <mik3dev@gmail.com>
+Standards-Version: 3.9.8
+Homepage: <https://github.com/Michedev/bitday-wallpaper-changer>
+Package: bitday-wallpaper-changer
+Architecture: all
+Multi-Arch: foreign
+Installed-size: 3 KiB
+Depends: python3 (>= 3.5.0) | python35 | python36
+Description: Python script file that changes automatically the wallpaper of your Linux desktop

@@ -32,7 +32,7 @@ setup(
     url='https://github.com/Michedev/bitday-wallpaper-changer',
     author='Michele De Vita',
     author_email='mik3dev@gmail.com',
-    description='Python script file that changes automatically the wallpaper of your KDE desktop',
+    description='Python script file that changes automatically the wallpaper of your Linux desktop',
     long_description=read('README.md'),
     license="GPLv3",
     python_requires='>=3.5',
